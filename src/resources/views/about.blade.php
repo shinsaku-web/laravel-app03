@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <h1 class="text-xs">About</h1>
+    <h1 class="text-3xl text-rose-400">About</h1>
+    <p class="mt-5 text-9xl">こんにちは！</p>
 </body>
 
 </html>
