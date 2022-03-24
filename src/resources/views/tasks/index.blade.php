@@ -9,6 +9,11 @@
         margin: 0 auto;
     }
 
+    .task__add {
+        text-align: right;
+        padding-bottom: 10px;
+    }
+
     table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -36,6 +41,9 @@
 </style>
 <h1>タスク一覧</h1>
 <div class="container">
+    <div class="task__add">
+        <a href="{{ route('tasks.add') }}">＋タスクを追加する</a>
+    </div>
     <table>
         <tr>
             <th>タスク</th>
@@ -45,7 +53,7 @@
         <tr>
             <td>{{ $task->name }}</td>
             <td>
-                <a href="">詳細</a>
+                <a href="{{ route('tasks.show', ['id' => $task->id]) }}">詳細</a>
                 <a href="">編集</a>
                 <a href="">削除</a>
             </td>
