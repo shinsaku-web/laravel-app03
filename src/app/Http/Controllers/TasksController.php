@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Http\Requests\TaskRequest;
 
 class TasksController extends Controller
 {
@@ -21,8 +22,11 @@ class TasksController extends Controller
     {
         return view('tasks.add');
     }
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
+
+        // バリデーション済みデータの取得
+        $validated = $request->validated();
         // tasksテーブルにフォームで入力した値を挿入する
         $result = Task::create([
             'name' => $request->name,

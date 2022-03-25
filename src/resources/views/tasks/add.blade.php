@@ -4,6 +4,14 @@
         padding: 30px;
     }
 
+    .error {
+        text-align: center;
+    }
+
+    .error__message {
+        color: red;
+    }
+
     .form {
         width: 80%;
         margin: 0 auto;
@@ -28,6 +36,12 @@
     }
 </style>
 <h1>タスク追加</h1>
+<div class="error">
+    @foreach ($errors->all() as $error)
+    <p class="error__message">{{$error}}</p>
+    @endforeach
+</div>
+
 <form action="{{ route('tasks.store') }}" method="POST" class="form">
     @csrf
     <div class="form-group">
