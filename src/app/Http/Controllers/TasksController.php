@@ -57,4 +57,15 @@ class TasksController extends Controller
         // タスク一覧画面にリダイレクト
         return redirect()->route('tasks.index');
     }
+    /**
+     * タスク削除処理
+     */
+    public function delete($id)
+    {
+        // idを条件にtasksテーブルから該当レコードを削除
+        $task = Task::destroy($id);
+
+        // タスク一覧画面にリダイレクト
+        return redirect()->route('tasks.index');
+    }
 }

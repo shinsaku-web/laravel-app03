@@ -24,6 +24,7 @@ Route::get('/tasks/add', [TasksController::class, 'add'])->name('tasks.add');
 Route::post('/tasks/add', [TasksController::class, 'store'])->name('tasks.store');
 Route::get('/tasks/edit/{id}', [TasksController::class, 'edit'])->name('tasks.edit');
 Route::post('/tasks/edit/{id}', [TasksController::class, 'update'])->name('tasks.update');
+Route::post('tasks/delete/{id}', [TasksController::class, 'delete'])->name('tasks.delete');
 
 Route::get('/about', function () {
     return view('about');
