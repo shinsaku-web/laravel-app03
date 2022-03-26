@@ -36,4 +36,8 @@ class TasksController extends Controller
         // タスク一覧画面にリダイレクト
         return redirect()->route('tasks.index');
     }
+    public function edit()
+    {
+        return view('tasks.edit');
+    }
 }
